@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS timetable;
+
+
+CREATE TABLE users (
+    sapid VARCHAR2(50) PRIMARY KEY,
+    name VARCHAR2(100) NOT NULL,
+    password VARCHAR2(100) NOT NULL
+);
+
+CREATE TABLE timetable (
+    subjects VARCHAR2(50) NULL,
+    monday NUMBER, 
+    tuesday NUMBER, 
+    wednesday NUMBER, 
+    thursday NUMBER, 
+    friday NUMBER, 
+    saturday NUMBER, 
+    total NUMBER NOT NULL
+);
+ALTER TABLE timetable ADD yourtotal NUMBER DEFAULT 0;
+
+CREATE TABLE last_entry ( 
+    subject VARCHAR2(50) PRIMARY KEY, 
+    day VARCHAR2(20),
+   	entry_time TIMESTAMP
+);
+
+INSERT INTO timetable (sapid, total) 
+VALUES ('S12345', 40);
+
+
