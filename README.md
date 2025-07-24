@@ -70,11 +70,11 @@ Clone the Repository:
 git clone <your-repository-url>
 ```
 
-Open in IDE: Open the cloned project folder in your IDE.
-Add JDBC Driver: Add the ojdbcX.jar file you downloaded to your project's build path.
-Eclipse: Right-click on the project -> Build Path -> Configure Build Path -> Libraries tab -> Add External JARs... -> Select your ojdbcX.jar file.
-IntelliJ: Go to File -> Project Structure -> Modules -> Dependencies tab -> Click the + icon -> JARs or directories... -> Select your ojdbcX.jar file.
-Verify Connection String: Inside the .java files (e.g., login.java, Timetable.java), check the database constants and update them if your setup is different:
+-    Open in IDE: Open the cloned project folder in your IDE.
+-    Add JDBC Driver: Add the ojdbcX.jar file you downloaded to your project's build path.
+-    Eclipse: Right-click on the project -> Build Path -> Configure Build Path -> Libraries tab -> Add External JARs... -> Select your ojdbcX.jar file.
+-    IntelliJ: Go to File -> Project Structure -> Modules -> Dependencies tab -> Click the + icon -> JARs or directories... -> Select your ojdbcX.jar file.
+-    Verify Connection String: Inside the .java files (e.g., login.java, Timetable.java), check the database constants and update them if your setup is different:
 ```java
 private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521:xe";
 private static final String DB_USERNAME = "system";
@@ -84,18 +84,18 @@ private static final String DB_PASSWORD = "123"; // Change this to your actual p
 Run the Application: The main entry point for the application is the login.java file. Right-click on login.java and run it as a Java Application.
 
 **How to Use**
-Run login.java. The Login window will appear.
-If you are a new user, click Register. This will open the Registration window (LoginPage.java).
-Enter your details and register.
-Return to the Login window and log in with your new credentials.
-First Login: You will be directed to the "Register Subjects" window (Subject.java). Enter the name of each subject and the total number of lectures planned for the entire course. Click Save Subjects.
-You will now be taken to the main Attendance Tracker window (Timetable.java).
-For your current class session, select "Present" or "Absent" for the subjects you attended. Click SAVE Session to record the data.
-Click View STATS at any time to see your attendance summary.
-Subsequent Logins: After your first login, you will be taken directly to the Attendance Tracker window.
+1.    Run login.java. The Login window will appear.
+2.    If you are a new user, click Register. This will open the Registration window (LoginPage.java).
+3.    Enter your details and register.
+4.    Return to the Login window and log in with your new credentials.
+5.    First Login: You will be directed to the "Register Subjects" window (Subject.java). Enter the name of each subject and the total number of lectures planned for the entire course. Click Save Subjects.
+6.    You will now be taken to the main Attendance Tracker window (Timetable.java).
+7.    For your current class session, select "Present" or "Absent" for the subjects you attended. Click SAVE Session to record the data.
+8.    Click View STATS at any time to see your attendance summary.
+9.    Subsequent Logins: After your first login, you will be taken directly to the Attendance Tracker window.
 
 **Project Structure**
-LoginPage.java: GUI for new user registration. Inserts new records into the users table.
-login.java: The main entry point. Handles user authentication. Checks the subjects_added flag to correctly navigate to either the Subject or Timetable window.
-Subject.java: GUI for one-time registration of subjects and their total target lectures. Populates the timetable table for the user and sets the subjects_added flag in the users table.
-Timetable.java: The main dashboard of the application. Allows users to mark attendance, view statistics, and reset their attendance data.
+-    LoginPage.java: GUI for new user registration. Inserts new records into the users table.
+-    login.java: The main entry point. Handles user authentication. Checks the subjects_added flag to correctly navigate to either the Subject or Timetable window.
+-    Subject.java: GUI for one-time registration of subjects and their total target lectures. Populates the timetable table for the user and sets the subjects_added flag in the users table.
+-    Timetable.java: The main dashboard of the application. Allows users to mark attendance, view statistics, and reset their attendance data.
